@@ -1,8 +1,66 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	padding: 0;
+	margin: 0;
+	border: 0;
+  	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+header{
+	width: 100%;
+	height: 40px;
+	background-image: linear-gradient(bottom, rgb(26,26,26) 43%, rgb(19,23,23) 72%);
+	background-image: -o-linear-gradient(bottom, rgb(26,26,26) 43%, rgb(19,23,23) 72%);
+	background-image: -moz-linear-gradient(bottom, rgb(26,26,26) 43%, rgb(19,23,23) 72%);
+	background-image: -webkit-linear-gradient(bottom, rgb(26,26,26) 43%, rgb(19,23,23) 72%);
+	background-image: -ms-linear-gradient(bottom, rgb(26,26,26) 43%, rgb(19,23,23) 72%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.43, rgb(26,26,26)),
+		color-stop(0.72, rgb(19,23,23))
+	);
+	-moz-box-shadow: 0 5px 5px #888;
+	-webkit-box-shadow: 0 5px 5px #888;
+	box-shadow: 0 5px 5px #888;
+}
+
+header h1{
+	text-shadow: 0 2px 3px rgba(0,0,0,0.5);
+	-webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+	margin-top: 0;
+	padding-top: 2px;
+	padding-left: 20px;
+	font: 26px "Lucida Grande", Helvetica, Arial, sans-serif;
+	color: #F5F5F5;
+	display: inline-block;
+}
+
+header #usuarios{
+	padding-right: 50px;
+	padding-top: 10px;
+	float: right;
+}
+
+header #usuarios #prompt{
+	float: left;
+	padding-top: 2px;
+	font: 11px "Lucida Grande", Helvetica, Arial, sans-serif;
+	color: #F5F5F5;
+}
+
+header #usuarios #cant{
+	float: right;
+	margin-left: 5px;
+	background-color: #EFEFED;
+	border: 1px solid #EFEFED;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	padding-left: 3px;
+	padding-right: 3px;
+	box-shadow: 2px 2px 2px #888888 inset;
 }

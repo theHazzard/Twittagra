@@ -2,4 +2,9 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  if user
+    p Bienvenido a #{title} #{user.username}!
+  else
+    p Welcome to #{title}, lamentablemente no se ha logeado =( por favor logeese!
+        a(href='/auth/twitter') Twitter
+  

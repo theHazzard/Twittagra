@@ -1,7 +1,17 @@
 doctype 5
 html
   head
-    title= title
+    link(rel='stylesheet', href='/stylesheets/normalize.css')    
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    header
+      h1 #{title} - "Levantando" un app de twitter ;)
+
+      if user
+        div#usuarios
+          div#prompt Usuario: 
+          div#cant #{user.username} 
+      else
+        div#usuarios
+          div#prompt No se ha logeado.
     block content

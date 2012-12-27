@@ -3,12 +3,12 @@ extends layout
 block content
   h1= title
   if user
-    p Bienvenido a #{title} #{user['usuario'].username}!
+    p Bienvenido a #{title} #{user['usuario'].displayName}!
       form(action='/twitteagrar/',method='post')
         label(for='tweet') tweetea!:
         input(id='tweet',name='tweet',type='text',value='',size=140,placeholder='Escribi aca tu tweet!')
         input(type='submit',value='Ahora!',data-transition='fade', data-theme='c')
-    section#tweet
+    section#tweetz
       each tweet in tweets
         article.tweets
           section.imagen  

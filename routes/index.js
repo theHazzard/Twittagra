@@ -21,10 +21,9 @@ module.exports = function(usertoken,usersecret){
 		        },
 				json:true,
 				body: 'status='+tweet
-				},function(req,res,body){
-		 			elJson = body;
-		 			console.log(body);
+				},function(req,res){	
 		  	});
+		  	res.redirect('http://twittagra.jit.su');
 		},
 		index : function(req, res){
 		  var token = req.user ? req.user['usertoken'] : null;
@@ -39,7 +38,7 @@ module.exports = function(usertoken,usersecret){
 		 			elJson = body;
 
 		  });
-		  res.render('index', { title: 'Twittagra!', user: req.user, tweets: elJson });
+		  res.render('index', { title: 'Twittagra', user: req.user, tweets: elJson });
 		}
 	}
 }

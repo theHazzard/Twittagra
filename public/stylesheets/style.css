@@ -40,7 +40,7 @@ header h1{
 }
 
 header #usuarios{
-	padding-right: 50px;
+	padding-right: 100px;
 	padding-top: 10px;
 	float: right;
 }
@@ -60,8 +60,14 @@ header #usuarios #prompt{
 	float: left;
 }
 
+#pic img{
+	margin-top: -7px;
+	height: 35px;
+	width: 35px;
+}
+
 header #usuarios #cant{
-	float: right;
+	float: left;
 	margin-left: 5px;
 	background-color: #EFEFED;
 	border: 1px solid #EFEFED;
@@ -73,29 +79,68 @@ header #usuarios #cant{
 	box-shadow: 2px 2px 2px #888888 inset;
 }
 
-#tweet{
-	background-color: #F5F3D8;
+#tweetz{
+	padding-top: 1em;
+	background-color: #C4E0E1;
+	-moz-box-shadow: 0 5px 5px #888 inset;
+	-webkit-box-shadow: 0 5px 5px #888 inset;
+	box-shadow: 0 5px 5px #888 inset;
 }
 
 .tweets{
 	margin: 0.5em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
 	display:inline-block;
 	vertical-align: top;
 	width: 48%;
-	background: #480402;
+	background: #EBEBEB;
+	border: 1px solid #ADADAD;
 	border-radius: 0.5em;
+	-moz-box-shadow: 0 5px 5px #888;
+	-webkit-box-shadow: 0 5px 5px #888;
+	box-shadow: 0 5px 5px #888;
 }
 
 .imagen{
 	float:left;
 	display:inline-block;
 	width:10%;	
+	padding-left: 0.5em;
+}
+
+#holder{
+	float:right;
 }
 
 .texto{
 	margin-top: 50%;
+	padding-left: 1em;
 	display: block;
 	margin-bottom: auto;
 	float:right;
 	width:90%;	
+}
+
+footer{
+	position: relative;
+	width: 100%;
+	margin-bottom: 0;
+	clear: both;
+	text-align: center;
+	margin-top: auto;
+}
+
+#logout{
+	margin-left: 1em;
+	float: right;
+}
+#lgo{
+	margin-top: -7px;
+	display: block;
+	background-color: #E7E8E3;
+	padding: 5px 10px 5px;
+	border: 1px solid #EFEFED;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }

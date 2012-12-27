@@ -13,8 +13,12 @@ html
           div#fotoUsername
             div#pic 
               img(src= user['usuario']._json.profile_image_url)
-            div#cant #{user['usuario'].username} 
+            div#holder
+              div#cant @#{user['usuario'].username} 
+              div#logout
+                a(href='/logout',id='lgo') Logout
       else
         div#usuarios
           div#prompt No se ha logeado.
     block content
+    footer "Twittagra - UCertificate 2012 - Andrea Barrios, Gabriel Salas"

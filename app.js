@@ -2,9 +2,9 @@
 /**
  * Module dependencies.
  */
-
+var usertoken,usersecret;
 var express = require('express')
-  , routes = require('./routes')
+  , routes = require('./routes')(usertoken,usersecret)
   , user = require('./routes/user')
   , http = require('http')
   , path = require('path');
@@ -29,12 +29,13 @@ passport.use(new TwitterStrategy({
   },
   function(token, tokenSecret, profile, done) {
     process.nextTick(function () {
-      
+      usertoken = token;
+      usersecret = tokenSecret;
       // To keep the example simple, the user's Twitter profile is returned to
       // represent the logged-in user.  In a typical application, you would want
       // to associate the Twitter account with a user record in your database,
       // and return that user instead.
-      return done(null, profile);
+      return done(null, {usuario: profile, usertoken:token, usersecret:tokenSecret});
     });
   }
 ));
@@ -60,7 +61,7 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
-app.get('/users', user.list);
+app.post('/twitteagrar', routes.twitteagrar);
 
 app.get('/auth/twitter', passport.authenticate('twitter'));
 

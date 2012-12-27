@@ -52,6 +52,14 @@ header #usuarios #prompt{
 	color: #F5F5F5;
 }
 
+#fotoUsername{
+	float: right;
+}
+ 
+#pic{
+	float: left;
+}
+
 header #usuarios #cant{
 	float: right;
 	margin-left: 5px;
@@ -63,4 +71,31 @@ header #usuarios #cant{
 	padding-left: 3px;
 	padding-right: 3px;
 	box-shadow: 2px 2px 2px #888888 inset;
+}
+
+#tweet{
+	background-color: #F5F3D8;
+}
+
+.tweets{
+	margin: 0.5em;
+	display:inline-block;
+	vertical-align: top;
+	width: 48%;
+	background: #480402;
+	border-radius: 0.5em;
+}
+
+.imagen{
+	float:left;
+	display:inline-block;
+	width:10%;	
+}
+
+.texto{
+	margin-top: 50%;
+	display: block;
+	margin-bottom: auto;
+	float:right;
+	width:90%;	
 }

@@ -10,7 +10,10 @@ html
       if user
         div#usuarios
           div#prompt Usuario: 
-          div#cant #{user['usuario'].username} 
+          div#fotoUsername
+            div#pic 
+              img(src= user['usuario']._json.profile_image_url)
+            div#cant #{user['usuario'].username} 
       else
         div#usuarios
           div#prompt No se ha logeado.

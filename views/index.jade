@@ -6,11 +6,15 @@ block content
     p Bienvenido a #{title} #{user['usuario'].username}!
       form(action='/twitteagrar/',method='post')
         label(for='tweet') tweetea!:
-        input(id='tweet',name='tweet',type='text',value='',placeholder='Escribi aca tu tweet!')
+        input(id='tweet',name='tweet',type='text',value='',size=140,placeholder='Escribi aca tu tweet!')
         input(type='submit',value='Ahora!',data-transition='fade', data-theme='c')
-    each tweet in tweets
-      li #{tweet['text']}
+    section#tweet
+      each tweet in tweets
+        article.tweets
+          section.imagen  
+            img(src= tweet['user'].profile_image_url)
+          section.text #{tweet['text']}
   else
     p Welcome to #{title}, lamentablemente no se ha logeado =( por favor logeese!
         a(href='/auth/twitter') Twitter
-  
+ 

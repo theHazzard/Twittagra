@@ -25,7 +25,7 @@ var app = express();
 passport.use(new TwitterStrategy({
     consumerKey: '07BhinJu0WvqBZ0a3wYMog',
     consumerSecret: 'wW819wb2t8MTQzgvu24CddBFSa7oCU1vO6hdGIEEgY',
-    callbackURL: "http://localhost:3000/auth/twitter/callback"
+    callbackURL: "http://twittagra.jit.su/auth/twitter/callback"
   },
   function(token, tokenSecret, profile, done) {
     process.nextTick(function () {
@@ -35,6 +35,7 @@ passport.use(new TwitterStrategy({
       // represent the logged-in user.  In a typical application, you would want
       // to associate the Twitter account with a user record in your database,
       // and return that user instead.
+      console.log(profile);
       return done(null, {usuario: profile, usertoken:token, usersecret:tokenSecret});
     });
   }

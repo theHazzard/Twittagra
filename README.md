@@ -4,9 +4,9 @@ Twittagra
 La fusion perfecta de twitter con viagra
 
 1. Para poder correr la aplicacion instalar las dependencias
-	npm install
+`npm install`
 
 2. luego 
-	node app
+`node app`
 
 y listo!

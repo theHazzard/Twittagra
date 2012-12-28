@@ -4,11 +4,14 @@
  */
 var usertoken,usersecret;
 var express = require('express')
+  , app = express()
   , routes = require('./routes')(usertoken,usersecret)
   , user = require('./routes/user')
-  , http = require('http')
-  , path = require('path');
+  , http = require('http').createServer(app)
+  , path = require('path')
+  , io = require('socket.io');
 
+io = io.listen(http);
 var passport = require('passport')
 , TwitterStrategy = require('passport-twitter').Strategy;
 
@@ -20,12 +23,12 @@ passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
-var app = express();
 
 passport.use(new TwitterStrategy({
     consumerKey: '07BhinJu0WvqBZ0a3wYMog',
     consumerSecret: 'wW819wb2t8MTQzgvu24CddBFSa7oCU1vO6hdGIEEgY',
     callbackURL: "http://twittagra.jit.su/auth/twitter/callback"
+    //callbackURL: "http://localhost:3000/auth/twitter/callback"
   },
   function(token, tokenSecret, profile, done) {
     process.nextTick(function () {
@@ -76,6 +79,6 @@ app.get('/logout', function(req, res){
   res.redirect('/');
 });
 
-http.createServer(app).listen(app.get('port'), function(){
+http.listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });

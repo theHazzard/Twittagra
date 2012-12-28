@@ -9,11 +9,13 @@ block content
         input(id='tweet',name='tweet',type='text',value='',size=140,placeholder='Escribi aca tu tweet!')
         input(type='submit',value='Ahora!',data-transition='fade', data-theme='c')
     section#tweetz
-      each tweet in tweets
-        article.tweets
-          section.imagen  
-            img(src= tweet['user'].profile_image_url)
-          section.text #{tweet['text']}
+      if tweets
+        each tweet in tweets
+          if tweet['user']['profile_image_url']
+            article.tweets
+              section.imagen  
+                img(src= tweet['user']['profile_image_url'])
+              section.text= tweet['text']
   else
     p Welcome to #{title}, lamentablemente no se ha logeado =( por favor logeese!
         a(href='/auth/twitter') Twitter

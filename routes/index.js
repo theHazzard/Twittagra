@@ -34,9 +34,8 @@ module.exports = function(usertoken,usersecret){
 		        , token: token
 		        , token_secret: tokensecret
 		        },
-				json:true},function(req,res,body){
+				json:true},function(requ,resp,body){
 		 			elJson = body;
-
 		  });
 		  res.render('index', { title: 'Twittagra', user: req.user, tweets: elJson });
 		}
